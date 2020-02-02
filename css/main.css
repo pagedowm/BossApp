@@ -1,0 +1,451 @@
+/* PublicClass  list-page */
+body{
+  margin: 0;
+  font-family: arial, helvetica, "microsoft yahei", sans-serif;
+  color: #7e8793;
+  -webkit-font-smoothing: antialiased; /*字体平滑样式*/
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/*浅色*/
+.grey{
+  color: #9FA3B0;
+}
+
+/*Button*/
+.btn{
+  border: none;
+  font-size: .9rem;
+  padding: .5rem 1.2rem;
+  border-radius: 2rem;
+}
+
+/* 左右分散对齐 */
+.flex{
+  display: flex;
+  justify-content: space-between; /*content适用与多行 items适用于单行 flex容器内元素平行排列 并且以剩余空间平分作为间隔*/
+  align-items: center;
+}
+
+.padded{
+  padding: 1rem;
+}
+/********home*********/
+
+.home-header{
+  background: url(../img/home-bg.png) no-repeat;
+  background-size: 100% auto;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.home-header > img{
+  width: 67%;
+  margin: 2.3rem; /*默认像素的两倍 16px是浏览器默认的 2rem就是32px*/ 
+}
+.home-header form{
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 2.2rem;
+  border-radius: 2.2rem;
+}
+.home-header form input{
+  width: 75%;
+  background: #FFF;
+  border: none;
+  color: #aaa;
+  font-size: .85rem;
+  outline: none;
+}
+.home-header form button{
+  font-size: 0.9rem;
+  color: #5bd4c7;
+  font-weight: lighter;
+  background: none;
+  border: none;
+}
+
+.home-categories{
+  padding: 0 1rem;
+}
+.home-categories dt{
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+.home-categories dt img{
+  width: 3rem;
+  margin-right: 1rem;
+}
+.home-categories dd{
+  margin: 0;
+  margin: 0 -0.4rem; /*父层设置负边距,让下面的标签保持和dt对齐*/
+}
+.home-categories dd .tag{
+  background: #f5f8f9;
+  color: #7e8793;
+  padding: .5rem 1rem;
+  display: inline-block;
+  border-radius: 2rem;
+  text-decoration: none;
+  margin: .2rem .4rem;
+  font-size: .9rem;
+}
+
+.home-footer{
+  width: 70%;
+  margin: 0 auto;
+  font-size: .75rem;
+}
+.home-footer p{
+  margin: .2rem 2;
+}
+
+/**********list*********/
+
+.list-header{
+  padding: .8rem 1rem;
+}
+.list-header img{
+  height: 1.2rem;
+}
+.list-header form{
+  width: 100%;
+}
+.list-header form .inner{
+  width: 100%;
+  background: #F5F8F9;
+  margin: 0 1rem;
+  line-height: 1.7rem;
+  border-radius: 2rem;
+  padding: 0 1rem;
+}
+.list-header form .inner input{
+  width: 80%;
+  background: transparent; /*透明背景*/
+  border: none;
+  outline: none;
+  color: #7E8793;
+}
+.list-header form button{
+  border: none;
+  background: none;
+  font-size: .9rem;
+  color: #5bd4c7;
+  flex-shrink: 0; /*溢出量收缩 值为0根据算式收缩量为1 即不收缩保持原长宽*/
+  padding: 0;
+}
+.filter {
+  padding: .5rem 1rem;
+  border: 1px solid #F5F8F9;
+}
+.filter dl,.filter dd{
+  margin: 0;
+}
+.filter dt{
+  font-size: .8rem;
+}
+.filter .active dt{
+  color: #333;
+}
+.filter dt:after{
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border: 1px solid #999;
+  border-style: solid none none solid;
+  transform: rotate(225deg);
+  margin-left: .5rem;
+  margin-bottom: 0.1875rem;
+}
+.filter .active dt:after{
+  margin-bottom: 0rem;  
+  transform: rotate(45deg);
+}
+.filter dd{
+  display: none;
+}
+.filter .active dd{
+  display: block;
+  background: rgba(0,0,0,.3);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 90px;
+  left: 0;
+}
+.filter .active dd ul{
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+.filter .active dd li{
+  line-height: 3rem;
+  text-indent: 1rem;
+  list-style: none;
+  color: #aaa;
+}
+.filter .active dd li.active{
+  background: #F5F8F9;
+  color: #333;
+}
+
+.job-list{
+  margin: 0;
+  padding: 0;
+}
+.job-item{
+  margin: 1rem;
+  padding-bottom: 1rem;
+  color: #7E8793;
+  text-decoration: none;
+  border-bottom: 1px solid #F5F8F9;
+}
+.job-item > img{
+  height: 3.5rem;
+  border-radius: .3rem;
+}
+.job-item .text{
+  width: 100%;
+  margin-left: 1rem;
+}
+.job-item .title{
+  color: #333;
+  font-size: .9rem;
+}
+.job-item .salary{
+  font-size: 1.2rem;
+  color: #fc6c38;
+}
+.job-item .company{
+  color: #333;
+  font-size: .8rem;
+  margin: .2rem 0;
+}
+.job-item .props{
+  font-size: .8rem;
+}
+.job-item .props span{
+  margin-right: .5rem;
+}
+
+/*********detail*********/
+.top-bar img{
+  height: 1rem;
+}
+.top-bar form{
+  width: 40%;
+  border: 1px solid #5BD4C7;
+  border-radius: 2rem;
+  padding: 0 .5rem;
+}
+.top-bar form input{
+  border: none;
+  width: 80%;
+  background: none;
+  line-height: 1.5rem;
+  color: #aaa;
+  font-size: .9rem;
+  outline: none;
+}
+.top-bar form button{
+  border: none;
+  background: url(../img/icons.png) no-repeat top center;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+.job-info{
+  background: #62d5c8;
+  color: #fff;
+}
+.job-info .title{
+  font-size: 1.2rem;
+}
+.job-info .props{
+  font-size: .8rem;
+  margin: 0.5rem 0;
+}
+.job-info .props .items i{
+  display: inline-block;
+  width: 1px;
+  height: .8rem;
+  background: #fff;
+  margin: 0 .5rem;
+}
+.job-info .tags span{
+  border: 1px solid #fff;
+  padding: .2rem .5rem;
+  border-radius: 2rem;
+  font-size: .75rem;
+}
+.user-info{
+  background: #eefbf9;
+}
+.user-info > img{
+  height: 3.5rem;
+  border-radius: 3.5rem;
+}
+.user-info > button{
+  background: #62D5C8;
+  color: #FFF;
+  flex-shrink: 0; /*无论怎么挤都不会被缩小*/
+}
+.user-info .name{
+  color: #333;
+}
+.user-info .name .like{
+  font-size: .8rem;
+  color: #f67042;
+}
+.user-info .desc{
+  font-size: .8rem;
+  color: #aaa;
+  margin-top: .5rem;
+}
+.user-info .info{
+  width: 40%;
+  margin: 0 1rem;
+}
+.job-detail h3{
+  color: #333;
+  font-size: 1rem;
+  position: relative;
+}
+.job-detail h3:after{
+  content: '';
+  width: 1rem;
+  height: 1px;
+  display: inline-block;
+  background: #62D5C8;
+  position: absolute;
+  top: 1.8rem;
+  left: 0;
+}
+.job-detail .text{
+  font-size: .95rem;
+  line-height: 1.5rem;
+}
+.job-detail .tags{
+  padding-top: .7rem;
+}
+.job-detail .tags span{
+  font-size: .9rem;
+  color: #5BD4C7;
+  border: 1px solid #5BD4C7;
+  padding: .1rem .5rem;
+  border-radius: 1rem;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+  display: inline-block; /*当多行标签时,inline-block起作用*/
+}
+.job-detail .text table{
+  border: 1px solid #ebecef;
+  padding: .7rem .3rem;
+  font-size: .75rem;
+}
+.job-detail .text th{
+  font-weight: normal;
+  width: 6rem;
+  color: #9fa3b0;
+}
+.job-detail .text td{
+  width: 8rem;
+}
+.company-info{
+  background: #EEFBF9;
+}
+.company-info > img{
+  height: 3.5rem;
+  border-radius: 3.5rem;
+}
+.company-info .info{
+  width: 100%;
+  margin-left: 1rem;
+}
+.company-info .info .name{
+  color: #333;
+}
+.company-info .info .name .btn{
+  background: #62D5C8;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+.company-info .info .desc{
+  font-size: .8rem;
+  color: #333;
+}
+.company-info .info .tags{
+  margin-top: .5rem;
+  font-size: .75rem;
+  justify-content: flex-start; /*向左对齐*/
+}
+.company-info .info .tags i{
+  display: inline-block;
+  width: 1px;
+  height: .8rem;
+  background: #EBECEF;
+  margin: 0 .5rem;
+}
+.related-jobs h3{
+  color: #7E8793;
+  font-weight: normal;
+  font-size: .9rem;
+}
+.related-jobs ul{
+  list-style: none;
+}
+.related-jobs ul li > a{
+  border: none;
+  border-top: 1px solid #EBECEF;
+  margin: 0;
+  padding: 1rem 0;
+}
+.related-jobs .btn{
+  padding: .4rem 1.2rem;
+  margin-top: .2rem;
+  border: 1px solid #62D5C8;
+  color: #62D5C8;
+  background: none;
+  outline: none;
+}
+.related-companies h3{
+  color: #7E8793;
+  font-weight: normal;
+  font-size: .9rem;
+}
+.related-companies .tags{
+  
+}
+.related-companies .tags a{
+  color: #7E8793;
+  text-decoration: none;
+  font-size: .8rem;
+  margin: 0 .8rem .2rem 0;
+  display: inline-block;
+}
+.job-footer{
+  margin: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #EBECEF;
+  line-height: 1.5rem;
+}
+.breadcrumb-nav a{
+  color: #7E8793;
+  text-decoration: none;
+  font-size: .75rem;
+}
+.breadcrumb-nav i{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #9FA3B0;
+  border-style: solid none none solid;
+  transform: rotate(135deg);
+}
